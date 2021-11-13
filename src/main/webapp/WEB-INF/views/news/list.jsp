@@ -17,9 +17,16 @@
 		<c:when test="${not empty datas}">
 			<ul>
 				<c:forEach items="${datas}" var="news">
-					<li><a
-						href="${pageContext.request.contextPath}/news/detail/${news.id}">
-							${news.title}- ${news.author}</a></li>
+					<li>
+						<div>
+							<h3>${news.title}</h3>
+							<p>${news.detail}</p>
+							<strong>${news.author}</strong>
+						</div>
+						<a href="${pageContext.request.contextPath}/news/detail/${news.id}">
+							<img alt="${pageContext.request.contextPath}/${news.picture}" src="${pageContext.request.contextPath}/uploads/123.jpg">
+						</a>
+					</li>
 				</c:forEach>
 			</ul>
 		</c:when>
